@@ -1,0 +1,40 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transcription Output</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container-1">
+    <h2>Votes:</h2>
+    <textarea readonly rows="10" cols="50">{{ transcription }}</textarea>
+    <br>
+    <a href="{{ url_for('apa') }}"><button>Go Back</button></a>
+  </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transcription Output</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container-1">
+    <h2>Votes:</h2>
+    <ul>
+      {% for key, value in apa.items() %}
+        <li>{{ key }}: {{ value }}%</li>
+      {% endfor %}
+    </ul>
+    <br>
+    <a href="{{ url_for('apa') }}"><button>Go Back</button></a>
+  </div>
+</body>
+</html>
